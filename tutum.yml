@@ -1,0 +1,13 @@
+newrelic:
+  image: tutum/newrelic-agent
+  restart: on-failure
+  privileged: true
+  volumes:
+    - /var/run/docker.sock:/hostfs/var/run/docker.sock
+    - /proc:/hostfs/proc
+    - /dev:/hostfs/dev
+    - /sys:/hostfs/sys
+  environment:
+    - NEW_RELIC_LICENSE_KEY=<LICENSE>
+    - HOSTNAME=$TUTUM_NODE_HOSTNAME
+  deployment_strategy: every_node
