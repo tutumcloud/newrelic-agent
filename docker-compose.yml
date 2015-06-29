@@ -1,12 +1,12 @@
 newrelic:
-  image: tutum/newrelic-agent
-  restart: on-failure
+  build: .
+  restart: "on-failure"
   privileged: true
   volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    - /dev:/dev
-    - /sys:/sys
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/dev:/dev"
+    - "/sys:/sys"
   environment:
-    - NEW_RELIC_LICENSE_KEY=<LICENSE>
+    - "NEW_RELIC_LICENSE_KEY=<LICENSE>"
   pid: host
   net: host
