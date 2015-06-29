@@ -6,29 +6,21 @@ Dockerized version of [New Relic's Server Monitoring agent](https://docs.newreli
 
 ## Supported metrics
 
-Current version only supports the following metrics:
+Current version supports the following metrics:
 
-Metric | Supported?
------- | ----------
-CPU | **YES**
-Memory | **YES**
-Processes | **YES**
-Network | NO: Container network interfaces are shown instead of the host's
-Disks | NO: The host disk appears with the wrong mount points
-Virtualization | NO: Docker is not yet supported in the latest stable release of the agent
+Metric | Supported locally? | Supported in Tutum?
+------ | ------------------ | -------------------
+CPU | **YES** | **YES**
+Memory | **YES** | **YES**
+Processes | **YES** | NO: pending Tutum's support for `--pid=host`
+Network | **YES** | NO: pending Tutum's support for `--net=host`
+Disks | NO | NO
+Virtualization | **YES** | **YES**
+
 
 ## Usage
 
-	docker run -d \
-		--restart on-failure \
-		--privileged \
-		-v /var/run/docker.sock:/hostfs/var/run/docker.sock \
-		-v /proc:/hostfs/proc \
-		-v /dev:/hostfs/dev \
-		-v /sys:/hostfs/sys \
-		-e NEW_RELIC_LICENSE_KEY=<LICENSE> \
-		-e HOSTNAME=$(hostname) \
-		tutum/newrelic-agent
+	docker-compose run -d -e NEW_RELIC_LICENSE_KEY=<LICENSE> newrelic
 
 replacing `<LICENSE>` with the 40 character license found in your account settings
 
