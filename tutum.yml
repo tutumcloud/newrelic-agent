@@ -10,5 +10,5 @@ newrelic:
     - "NEW_RELIC_LICENSE_KEY=<LICENSE>"
     - "HOSTNAME=$TUTUM_NODE_HOSTNAME"
   deployment_strategy: every_node
-  # net: host
-  # pid: host
+  net: host
+  pid: host
