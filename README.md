@@ -12,8 +12,8 @@ Metric | Supported locally? | Supported in Tutum?
 ------ | ------------------ | -------------------
 CPU | **YES** | **YES**
 Memory | **YES** | **YES**
-Processes | **YES** | NO: pending Tutum's support for `--pid=host`
-Network | **YES** | NO: pending Tutum's support for `--net=host`
+Processes | **YES** | **YES**
+Network | **YES** | **YES**
 Disks | NO | NO
 Virtualization | **YES** | **YES**
 
