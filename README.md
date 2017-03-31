@@ -1,30 +1,7 @@
 # tutum/newrelic-agent
 
-[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
+This repo is deprecated: we are not going to maintain it anymore.
 
-Dockerized version of [New Relic's Server Monitoring agent](https://docs.newrelic.com/docs/servers/new-relic-servers-linux/getting-started/new-relic-servers-linux)
+You can visit [Docker Store](https://store.docker.com) to explore similar images.
 
-## Supported metrics
-
-Current version supports the following metrics:
-
-Metric | Supported locally? | Supported in Tutum?
------- | ------------------ | -------------------
-CPU | **YES** | **YES**
-Memory | **YES** | **YES**
-Processes | **YES** | **YES**
-Network | **YES** | **YES**
-Disks | NO | NO
-Virtualization | **YES** | **YES**
-
-
-## Usage
-
-	docker-compose run -d -e NEW_RELIC_LICENSE_KEY=<LICENSE> newrelic
-
-replacing `<LICENSE>` with the 40 character license found in your account settings
-
-
-## License
-
-New Relic's Server Monitoring agent has a propietary license included in [LICENSE](./LICENSE)
+To access the last commit of the code, please switch to [master branch](https://github.com/tutumcloud/newrelic-agent/tree/master).
